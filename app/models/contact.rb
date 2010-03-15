@@ -7,6 +7,8 @@ class Contact < ActiveRecord::Base
     email :email_address, :required
     timestamps
   end
+  
+  has_many :consultations
 
 
   # --- Permissions --- #
