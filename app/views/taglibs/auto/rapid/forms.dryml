@@ -15,7 +15,7 @@
 <def tag="form" for="Document">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="title, description, consultation" param/>
+    <field-list fields="title, description, result_of_consultation, source_for_consultation" param/>
     <div param="actions">
       <submit label="#{ht 'documents.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>

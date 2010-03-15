@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100315155332) do
+ActiveRecord::Schema.define(:version => 20100315155838) do
 
   create_table "consultation_policy_fields", :force => true do |t|
     t.datetime "created_at"
@@ -46,10 +46,12 @@ ActiveRecord::Schema.define(:version => 20100315155332) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "consultation_id"
+    t.integer  "source_documents_id"
+    t.integer  "result_documents_id"
   end
 
-  add_index "documents", ["consultation_id"], :name => "index_documents_on_consultation_id"
+  add_index "documents", ["result_documents_id"], :name => "index_documents_on_result_documents_id"
+  add_index "documents", ["source_documents_id"], :name => "index_documents_on_source_documents_id"
 
   create_table "policy_fields", :force => true do |t|
     t.string   "title"

@@ -17,8 +17,8 @@ class Consultation < ActiveRecord::Base
   has_many :consultation_target_groups
   has_many :target_groups, :through => :consultation_target_groups, :accessible => true
 
-  has_many :documents
-
+  has_many :source_documents, :class_name => "Document", :foreign_key => "source_documents_id"
+  has_many :result_documents, :class_name => "Document", :foreign_key => "result_documents_id"
   # --- Permissions --- #
 
   def create_permitted?

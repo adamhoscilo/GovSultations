@@ -221,7 +221,7 @@
 
           <section param="content-body">
             <view:description param="description"/>
-            <field-list fields="consultation" param/>
+            <field-list fields="result_of_consultation, source_for_consultation" param/>
           </section>
     </content:>
 
@@ -251,6 +251,88 @@
 
   </page>
 </def>
+
+<def tag="index-for-source-for-consultation-page" polymorphic/>
+<def tag="index-for-source-for-consultation-page" for="Document">
+  <page merge title="#{ht 'documents.index_for_owner.title', :default=>['Documents for']} #{name :with => @source_for_consultation, :no_wrapper => true}">    
+    <body: class="index-for-owner-page source-for-consultation document" param/>
+    <content: param>
+      <header param="content-header">
+        <div param="back-to">
+          <ht key="hobo.actions.back">Back to</ht> <a with="&@source_for_consultation"/>
+        </div>
+        <h2 param="heading">
+          <ht key="documents.index_for_owner.heading.other">
+            Documents
+          </ht>
+        </h2>
+        <h3 param="subheading">
+          <ht key="documents.index_for_owner.subheading">
+            For:
+          </ht>
+          <a with="&@source_for_consultation"/>
+        </h3>
+        <p param="count" if>
+          <ht key="documents.collection.count" count="&this.size">
+            There <count prefix="are"/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+
+<def tag="index-for-result-of-consultation-page" polymorphic/>
+<def tag="index-for-result-of-consultation-page" for="Document">
+  <page merge title="#{ht 'documents.index_for_owner.title', :default=>['Documents for']} #{name :with => @result_of_consultation, :no_wrapper => true}">    
+    <body: class="index-for-owner-page result-of-consultation document" param/>
+    <content: param>
+      <header param="content-header">
+        <div param="back-to">
+          <ht key="hobo.actions.back">Back to</ht> <a with="&@result_of_consultation"/>
+        </div>
+        <h2 param="heading">
+          <ht key="documents.index_for_owner.heading.other">
+            Documents
+          </ht>
+        </h2>
+        <h3 param="subheading">
+          <ht key="documents.index_for_owner.subheading">
+            For:
+          </ht>
+          <a with="&@result_of_consultation"/>
+        </h3>
+        <p param="count" if>
+          <ht key="documents.collection.count" count="&this.size">
+            There <count prefix="are"/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
 
 
 

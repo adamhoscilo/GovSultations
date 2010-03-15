@@ -8,9 +8,8 @@ class Document < ActiveRecord::Base
     timestamps
   end
   
-  belongs_to :consultation
-
-
+  belongs_to :source_for_consultation, :class_name => "Consultation", :foreign_key => "source_documents_id"
+  belongs_to :result_of_consultation, :class_name => "Consultation", :foreign_key => "result_documents_id"
   # --- Permissions --- #
 
   def create_permitted?
