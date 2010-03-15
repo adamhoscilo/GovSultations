@@ -6,6 +6,7 @@
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
     <nav-item with="&Consultation"><ht key="consultations.nav_item">Consultations</ht></nav-item>
+    <nav-item with="&Contact"><ht key="contacts.nav_item">Contacts</ht></nav-item>
     <nav-item with="&Document"><ht key="documents.nav_item">Documents</ht></nav-item>
     <nav-item with="&PolicyField"><ht key="policy_fields.nav_item">Policy Fields</ht></nav-item>
     <nav-item with="&TargetGroup"><ht key="target_groups.nav_item">Target Groups</ht></nav-item>
@@ -121,6 +122,126 @@
           </ht>
         </h2>
         <delete-button label="#{ht 'consultations.actions.delete', :default=>['Remove This Consultation']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Contact Pages ====== -->
+
+<def tag="index-page" for="Contact">
+  <page merge title="#{ht 'contacts.index.title', :default=>['Contacts'] }">
+    <body: class="index-page contact" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="contacts.index.heading">
+            Contacts
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="contacts.collection.count" count="&this.size">
+            There <count prefix="are"/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="contacts.actions.new">New Contact</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Contact">
+  <page merge title="#{ht 'contacts.new.title', :default=>[' New Contact'] }">
+    <body: class="new-page contact" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="contacts.new.heading">
+            New Contact
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'contacts.actions.create', :default=>['Create Contact']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Contact">
+  <page merge title="#{ht 'contacts.show.title', :default=>['Contact'] }">
+
+    <body: class="show-page contact" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="contacts.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="contacts.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Contact
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="email" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Contact">
+  <page merge title="#{ht 'contacts.edit.title', :default=>['Edit Contact'] }">
+
+    <body: class="edit-page contact" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="contacts.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit <type-name/>
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'contacts.actions.delete', :default=>['Remove This Contact']}" param/>
       </section>
 
       <section param="content-body">
