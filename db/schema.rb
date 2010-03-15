@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100315154937) do
+ActiveRecord::Schema.define(:version => 20100315155222) do
 
   create_table "consultation_policy_fields", :force => true do |t|
     t.datetime "created_at"
@@ -37,6 +37,13 @@ ActiveRecord::Schema.define(:version => 20100315154937) do
     t.datetime "end_date"
     t.text     "objective"
     t.text     "result_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "documents", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

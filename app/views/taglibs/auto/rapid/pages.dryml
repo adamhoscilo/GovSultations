@@ -6,6 +6,7 @@
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
     <nav-item with="&Consultation"><ht key="consultations.nav_item">Consultations</ht></nav-item>
+    <nav-item with="&Document"><ht key="documents.nav_item">Documents</ht></nav-item>
     <nav-item with="&PolicyField"><ht key="policy_fields.nav_item">Policy Fields</ht></nav-item>
     <nav-item with="&TargetGroup"><ht key="target_groups.nav_item">Target Groups</ht></nav-item>
   </navigation>
@@ -120,6 +121,126 @@
           </ht>
         </h2>
         <delete-button label="#{ht 'consultations.actions.delete', :default=>['Remove This Consultation']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Document Pages ====== -->
+
+<def tag="index-page" for="Document">
+  <page merge title="#{ht 'documents.index.title', :default=>['Documents'] }">
+    <body: class="index-page document" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="documents.index.heading">
+            Documents
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="documents.collection.count" count="&this.size">
+            There <count prefix="are"/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="documents.actions.new">New Document</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Document">
+  <page merge title="#{ht 'documents.new.title', :default=>[' New Document'] }">
+    <body: class="new-page document" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="documents.new.heading">
+            New Document
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'documents.actions.create', :default=>['Create Document']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Document">
+  <page merge title="#{ht 'documents.show.title', :default=>['Document'] }">
+
+    <body: class="show-page document" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="documents.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="documents.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Document
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <view:description param="description"/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Document">
+  <page merge title="#{ht 'documents.edit.title', :default=>['Edit Document'] }">
+
+    <body: class="edit-page document" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="documents.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit <type-name/>
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'documents.actions.delete', :default=>['Remove This Document']}" param/>
       </section>
 
       <section param="content-body">
