@@ -1,0 +1,21 @@
+h1. Welcome to GovSultations project
+
+GovSultations is meant to be an open platform for social consultations.
+
+This project is based on "Ruby on Rails":http://rubyonrails.org and "Hobo":http://hobocentral.net
+
+h2. How to start?
+
+# install Ruby and RubyGems (depends on your platform, should be out of the box on most Linux systems and MacOSX)
+# install Ruby on Rails (>=2.3.5) <notextile><pre><code>gem install rails</code></pre></notextile>
+# install Hobo (>=1.0)<notextile><pre><code>gem install hobo</code></pre></notextile>
+# you will need MySQL or SQLite3 support <notextile><pre><code>gem install mysql</code></pre></notextile> or <notextile><pre><code>gem install sqlite3-ruby</code></pre></notextile>
+# clone the code in your project directory from github<notextile><pre><code>git clone git://github.com/adamhoscilo/GovSultations.git your_project_dir</code></pre></notextile>
+# go to _your_project_dir_ and customize _config/database.yml_ (no need if you use SQLite3)
+# create database and migrate the structure<notextile><pre><code>rake db:create</code></pre></notextile><notextile><pre><code>rake db:migrate</code></pre></notextile>
+# start the server <notextile><pre><code>./script/server</code></pre></notextile>
+# go to "http://localhost:3000":http://localhost:3000 in your browser and play with the system (you will have to create an admin user in the first place)
+
+h3. Enjoy! Fork! Send feedback, send feature requests, post bugs.
+
+*Keep in mind that this project is in heavy development and in very early stage. Far away from production ready.*
