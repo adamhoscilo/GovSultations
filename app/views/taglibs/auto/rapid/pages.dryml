@@ -5,8 +5,129 @@
 <def tag="main-nav">
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item with="&Consultation"><ht key="consultations.nav_item">Consultations</ht></nav-item>
   </navigation>
 </def>
+
+
+
+
+<!-- ====== Consultation Pages ====== -->
+
+<def tag="index-page" for="Consultation">
+  <page merge title="#{ht 'consultations.index.title', :default=>['Consultations'] }">
+    <body: class="index-page consultation" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="consultations.index.heading">
+            Consultations
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="consultations.collection.count" count="&this.size">
+            There <count prefix="are"/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="consultations.actions.new">New Consultation</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Consultation">
+  <page merge title="#{ht 'consultations.new.title', :default=>[' New Consultation'] }">
+    <body: class="new-page consultation" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="consultations.new.heading">
+            New Consultation
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'consultations.actions.create', :default=>['Create Consultation']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Consultation">
+  <page merge title="#{ht 'consultations.show.title', :default=>['Consultation'] }">
+
+    <body: class="show-page consultation" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="consultations.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="consultations.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Consultation
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="start_date, end_date, objective, result_description" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Consultation">
+  <page merge title="#{ht 'consultations.edit.title', :default=>['Edit Consultation'] }">
+
+    <body: class="edit-page consultation" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="consultations.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit <type-name/>
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'consultations.actions.delete', :default=>['Remove This Consultation']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
 
 
 
