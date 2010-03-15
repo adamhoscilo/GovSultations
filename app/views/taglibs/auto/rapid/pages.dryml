@@ -7,6 +7,7 @@
     <nav-item href="#{base_url}/">Home</nav-item>
     <nav-item with="&Consultation"><ht key="consultations.nav_item">Consultations</ht></nav-item>
     <nav-item with="&PolicyField"><ht key="policy_fields.nav_item">Policy Fields</ht></nav-item>
+    <nav-item with="&TargetGroup"><ht key="target_groups.nav_item">Target Groups</ht></nav-item>
   </navigation>
 </def>
 
@@ -238,6 +239,125 @@
           </ht>
         </h2>
         <delete-button label="#{ht 'policy_fields.actions.delete', :default=>['Remove This Policy Field']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== TargetGroup Pages ====== -->
+
+<def tag="index-page" for="TargetGroup">
+  <page merge title="#{ht 'target_groups.index.title', :default=>['Target Groups'] }">
+    <body: class="index-page target-group" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="target_groups.index.heading">
+            Target Groups
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="target_groups.collection.count" count="&this.size">
+            There <count prefix="are"/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="target_groups.actions.new">New Target Group</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="TargetGroup">
+  <page merge title="#{ht 'target_groups.new.title', :default=>[' New Target Group'] }">
+    <body: class="new-page target-group" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="target_groups.new.heading">
+            New Target Group
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'target_groups.actions.create', :default=>['Create Target Group']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="TargetGroup">
+  <page merge title="#{ht 'target_groups.show.title', :default=>['Target Group'] }">
+
+    <body: class="show-page target-group" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="target_groups.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="target_groups.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Target Group
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="TargetGroup">
+  <page merge title="#{ht 'target_groups.edit.title', :default=>['Edit Target Group'] }">
+
+    <body: class="edit-page target-group" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="target_groups.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit <type-name/>
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'target_groups.actions.delete', :default=>['Remove This Target Group']}" param/>
       </section>
 
       <section param="content-body">
