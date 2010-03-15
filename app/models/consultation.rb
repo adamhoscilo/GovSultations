@@ -13,6 +13,9 @@ class Consultation < ActiveRecord::Base
   
   has_many :consultation_policy_fields
   has_many :policy_fields, :through => :consultation_policy_fields, :accessible => true
+  
+  has_many :consultation_target_groups
+  has_many :target_groups, :through => :consultation_target_groups, :accessible => true
 
 
   # --- Permissions --- #

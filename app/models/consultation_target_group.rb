@@ -1,15 +1,12 @@
-class TargetGroup < ActiveRecord::Base
+class ConsultationTargetGroup < ActiveRecord::Base
 
   hobo_model # Don't put anything above this
 
   fields do
-    title :string
     timestamps
   end
-  
-  has_many :consultation_target_groups
-  has_many :consultations, :through => :consultation_target_groups, :accessible => true
-
+  belongs_to :consultation
+  belongs_to :target_group
 
   # --- Permissions --- #
 

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100315154308) do
+ActiveRecord::Schema.define(:version => 20100315154937) do
 
   create_table "consultation_policy_fields", :force => true do |t|
     t.datetime "created_at"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(:version => 20100315154308) do
 
   add_index "consultation_policy_fields", ["consultation_id"], :name => "index_consultation_policy_fields_on_consultation_id"
   add_index "consultation_policy_fields", ["policy_field_id"], :name => "index_consultation_policy_fields_on_policy_field_id"
+
+  create_table "consultation_target_groups", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "consultation_id"
+    t.integer  "target_group_id"
+  end
+
+  add_index "consultation_target_groups", ["consultation_id"], :name => "index_consultation_target_groups_on_consultation_id"
+  add_index "consultation_target_groups", ["target_group_id"], :name => "index_consultation_target_groups_on_target_group_id"
 
   create_table "consultations", :force => true do |t|
     t.string   "title"
