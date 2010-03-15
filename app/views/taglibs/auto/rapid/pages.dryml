@@ -221,6 +221,7 @@
 
           <section param="content-body">
             <view:description param="description"/>
+            <field-list fields="consultation" param/>
           </section>
     </content:>
 

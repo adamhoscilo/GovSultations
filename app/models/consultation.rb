@@ -17,6 +17,7 @@ class Consultation < ActiveRecord::Base
   has_many :consultation_target_groups
   has_many :target_groups, :through => :consultation_target_groups, :accessible => true
 
+  has_many :documents
 
   # --- Permissions --- #
 

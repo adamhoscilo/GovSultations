@@ -7,6 +7,8 @@ class Document < ActiveRecord::Base
     description :textile
     timestamps
   end
+  
+  belongs_to :consultation
 
 
   # --- Permissions --- #
