@@ -1,0 +1,34 @@
+<def tag="index-page" for="Consultation">
+  <page merge title="#{ht 'consultations.index.title', :default=>['Konsultacje'] }">
+    <body: class="index-page consultation" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="consultations.index.heading">
+            Ongoing consultations
+          </ht>
+        </h2>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="consultations.actions.new">Add new consultation</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <table-plus fields="this, end_date, policy_fields" param>
+          <Consultation-heading:>Title</Consultation-heading:>
+          <policy_fields-heading:>Policy fields</policy_fields-heading:>
+          <end_date-heading:>End date</end_date-heading:>
+          <end_date-view:><%= this.to_date %></end_date-view:>
+        </table-plus>
+      
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>

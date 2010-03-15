@@ -4,6 +4,10 @@
 <include src="taglibs/auto/rapid/pages"/>
 <include src="taglibs/auto/rapid/forms"/>
 
+<include src="taglibs/cards"/>
+<include src="taglibs/pages"/>
+<include src="taglibs/forms"/>
+
 <set-theme name="clean"/>
 
-<def tag="app-name">Govsultations</def>
+<def tag="app-name">GovSultations</def>
