@@ -1,16 +1,13 @@
-class PolicyField < ActiveRecord::Base
+class ConsultationPolicyField < ActiveRecord::Base
 
   hobo_model # Don't put anything above this
 
   fields do
-    title :string
     timestamps
   end
   
-  has_many :consultation_policy_fields
-  
-  has_many :consultations, :through => :consultation_policy_fields, :accessible => true
-  
+  belongs_to :consultation
+  belongs_to :policy_field
 
 
   # --- Permissions --- #

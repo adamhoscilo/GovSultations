@@ -3,7 +3,7 @@
 <def tag="form" for="Consultation">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="title, start_date, end_date, objective, result_description" param/>
+    <field-list fields="title, start_date, end_date, objective, result_description, policy_fields" param/>
     <div param="actions">
       <submit label="#{ht 'consultations.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
@@ -15,7 +15,7 @@
 <def tag="form" for="PolicyField">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="title" param/>
+    <field-list fields="title, consultations" param/>
     <div param="actions">
       <submit label="#{ht 'policy_fields.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>

@@ -10,6 +10,9 @@ class Consultation < ActiveRecord::Base
     result_description :textile
     timestamps
   end
+  
+  has_many :consultation_policy_fields
+  has_many :policy_fields, :through => :consultation_policy_fields, :accessible => true
 
 
   # --- Permissions --- #

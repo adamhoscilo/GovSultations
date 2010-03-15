@@ -8,6 +8,14 @@
   </card>
 </def>
 
+<def tag="card" for="ConsultationPolicyField">
+  <card class="consultation-policy-field" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+  </card>
+</def>
+
 <def tag="card" for="PolicyField">
   <card class="policy-field" param="default" merge>
     <header: param>
