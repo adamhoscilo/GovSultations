@@ -6,6 +6,7 @@
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
     <nav-item with="&Consultation"><ht key="consultations.nav_item">Consultations</ht></nav-item>
+    <nav-item with="&PolicyField"><ht key="policy_fields.nav_item">Policy Fields</ht></nav-item>
   </navigation>
 </def>
 
@@ -118,6 +119,125 @@
           </ht>
         </h2>
         <delete-button label="#{ht 'consultations.actions.delete', :default=>['Remove This Consultation']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== PolicyField Pages ====== -->
+
+<def tag="index-page" for="PolicyField">
+  <page merge title="#{ht 'policy_fields.index.title', :default=>['Policy Fields'] }">
+    <body: class="index-page policy-field" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="policy_fields.index.heading">
+            Policy Fields
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="policy_fields.collection.count" count="&this.size">
+            There <count prefix="are"/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="policy_fields.actions.new">New Policy Field</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="PolicyField">
+  <page merge title="#{ht 'policy_fields.new.title', :default=>[' New Policy Field'] }">
+    <body: class="new-page policy-field" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="policy_fields.new.heading">
+            New Policy Field
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'policy_fields.actions.create', :default=>['Create Policy Field']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="PolicyField">
+  <page merge title="#{ht 'policy_fields.show.title', :default=>['Policy Field'] }">
+
+    <body: class="show-page policy-field" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="policy_fields.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="policy_fields.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Policy Field
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="PolicyField">
+  <page merge title="#{ht 'policy_fields.edit.title', :default=>['Edit Policy Field'] }">
+
+    <body: class="edit-page policy-field" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="policy_fields.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit <type-name/>
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'policy_fields.actions.delete', :default=>['Remove This Policy Field']}" param/>
       </section>
 
       <section param="content-body">
