@@ -8,8 +8,8 @@
     <nav-item with="&Consultation"><ht key="consultations.nav_item">Consultations</ht></nav-item>
     <nav-item with="&Contact"><ht key="contacts.nav_item">Contacts</ht></nav-item>
     <nav-item with="&Document"><ht key="documents.nav_item">Documents</ht></nav-item>
+    <nav-item with="&Institution"><ht key="institutions.nav_item">Institutions</ht></nav-item>
     <nav-item with="&PolicyField"><ht key="policy_fields.nav_item">Policy Fields</ht></nav-item>
-    <nav-item with="&TargetGroup"><ht key="target_groups.nav_item">Target Groups</ht></nav-item>
   </navigation>
 </def>
 
@@ -454,6 +454,126 @@
 </def>
 
 
+
+
+
+
+
+<!-- ====== Institution Pages ====== -->
+
+<def tag="index-page" for="Institution">
+  <page merge title="#{ht 'institutions.index.title', :default=>['Institutions'] }">
+    <body: class="index-page institution" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="institutions.index.heading">
+            Institutions
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="institutions.collection.count" count="&this.size">
+            There <count prefix="are"/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="institutions.actions.new">New Institution</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Institution">
+  <page merge title="#{ht 'institutions.new.title', :default=>[' New Institution'] }">
+    <body: class="new-page institution" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="institutions.new.heading">
+            New Institution
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'institutions.actions.create', :default=>['Create Institution']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Institution">
+  <page merge title="#{ht 'institutions.show.title', :default=>['Institution'] }">
+
+    <body: class="show-page institution" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="institutions.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="institutions.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Institution
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <view:description param="description"/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Institution">
+  <page merge title="#{ht 'institutions.edit.title', :default=>['Edit Institution'] }">
+
+    <body: class="edit-page institution" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="institutions.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit <type-name/>
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'institutions.actions.delete', :default=>['Remove This Institution']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
 
 
 
