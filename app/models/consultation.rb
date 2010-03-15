@@ -10,8 +10,13 @@ class Consultation < ActiveRecord::Base
     result_description :textile
     timestamps
   end
+  
+  named_scope :active, lambda {{:conditions => ["end_date > ?", Time.now]}}
+  named_scope :inactive, lambda {{:conditions => ["end_date < ?", Time.now]}}
+  
   belongs_to :contact
-    
+  belongs_to :institution
+      
   has_many :consultation_policy_fields
   has_many :policy_fields, :through => :consultation_policy_fields, :accessible => true
   
@@ -21,6 +26,10 @@ class Consultation < ActiveRecord::Base
   has_many :source_documents, :class_name => "Document", :foreign_key => "source_documents_id"
   has_many :result_documents, :class_name => "Document", :foreign_key => "result_documents_id"
   # --- Permissions --- #
+  
+  def to_param
+    "#{self.id}-#{self.title.to_textual_id}"
+  end
 
   def create_permitted?
     acting_user.administrator?

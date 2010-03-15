@@ -101,7 +101,7 @@
           </header>
 
           <section param="content-body">
-            <field-list fields="start_date, end_date, objective, result_description, contact" param/>
+            <field-list fields="start_date, end_date, objective, result_description, contact, institution" param/>
           </section>
     </content:>
 
@@ -401,6 +401,10 @@
       </header>
 
       <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="documents.actions.new" >New Document</ht>
+        </a>
+
 
         <page-nav param="top-page-nav"/>
 
@@ -413,6 +417,35 @@
 </def>
 
 
+<def tag="new-for-source-for-consultation-page" polymorphic/>
+<def tag="new-for-source-for-consultation-page" for="Document">
+  <page merge title="#{ht 'documents.new_for_owner.title', :default=>['New Document for']} #{name :with => @source_for_consultation}">
+    <body: class="new-for-owner-page  document" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="documents.new_for_owner.heading">
+            New Source Document
+          </ht>
+        </h2>
+        <h3 param="subheading">
+          <ht key="documents.new_for_owner.subheading">
+            For:
+          </ht>
+          <a with="&@source_for_consultation"/>
+        </h3>
+      </header>
+
+      <section param="content-body">
+        <form owner="source_for_consultation" method="post" param>
+          <field-list: skip="source_for_consultation"/>
+          <submit: label="#{ht 'documents.actions.create', :default=>['Create Document']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
 
 <def tag="index-for-result-of-consultation-page" polymorphic/>
 <def tag="index-for-result-of-consultation-page" for="Document">
@@ -442,6 +475,10 @@
       </header>
 
       <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="documents.actions.new" >New Document</ht>
+        </a>
+
 
         <page-nav param="top-page-nav"/>
 
@@ -454,6 +491,35 @@
 </def>
 
 
+<def tag="new-for-result-of-consultation-page" polymorphic/>
+<def tag="new-for-result-of-consultation-page" for="Document">
+  <page merge title="#{ht 'documents.new_for_owner.title', :default=>['New Document for']} #{name :with => @result_of_consultation}">
+    <body: class="new-for-owner-page  document" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="documents.new_for_owner.heading">
+            New Result Document
+          </ht>
+        </h2>
+        <h3 param="subheading">
+          <ht key="documents.new_for_owner.subheading">
+            For:
+          </ht>
+          <a with="&@result_of_consultation"/>
+        </h3>
+      </header>
+
+      <section param="content-body">
+        <form owner="result_of_consultation" method="post" param>
+          <field-list: skip="result_of_consultation"/>
+          <submit: label="#{ht 'documents.actions.create', :default=>['Create Document']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
 
 
 

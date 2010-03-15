@@ -3,11 +3,12 @@ class Institution < ActiveRecord::Base
   hobo_model # Don't put anything above this
 
   fields do
-    title       :string
+    title       :string, :required
     description :textile
     timestamps
   end
-
+  
+  has_many :consultations
 
   # --- Permissions --- #
 

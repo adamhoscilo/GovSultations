@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100315160943) do
+ActiveRecord::Schema.define(:version => 20100315161155) do
 
   create_table "consultation_policy_fields", :force => true do |t|
     t.datetime "created_at"
@@ -40,9 +40,11 @@ ActiveRecord::Schema.define(:version => 20100315160943) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "contact_id"
+    t.integer  "institution_id"
   end
 
   add_index "consultations", ["contact_id"], :name => "index_consultations_on_contact_id"
+  add_index "consultations", ["institution_id"], :name => "index_consultations_on_institution_id"
 
   create_table "contacts", :force => true do |t|
     t.string   "title"
