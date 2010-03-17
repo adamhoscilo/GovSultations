@@ -11,9 +11,6 @@ class Consultation < ActiveRecord::Base
     timestamps
   end
   
-  named_scope :active, lambda {{:conditions => ["end_date > ?", Time.now]}}
-  named_scope :inactive, lambda {{:conditions => ["end_date < ?", Time.now]}}
-  
   belongs_to :contact
   belongs_to :institution
       
@@ -25,6 +22,11 @@ class Consultation < ActiveRecord::Base
 
   has_many :source_documents, :class_name => "Document", :foreign_key => "source_documents_id"
   has_many :result_documents, :class_name => "Document", :foreign_key => "result_documents_id"
+  
+  named_scope :active, lambda {{:conditions => ["end_date > ?", Time.now]}}
+  named_scope :inactive, lambda {{:conditions => ["end_date < ?", Time.now]}}
+  
+  validates_presence_of :contact
   # --- Permissions --- #
   
   def to_param
