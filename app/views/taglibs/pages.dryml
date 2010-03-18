@@ -1,5 +1,5 @@
 <def tag="index-page" for="Consultation">
-  <page merge title="#{ht 'consultations.index.title', :default=>['Konsultacje'] }">
+  <page merge title="#{ht 'consultations.index.title', :default=>['Consultations'] }">
     <body: class="index-page consultation" param/>
 
     <content: param>

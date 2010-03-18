@@ -15,17 +15,17 @@
 <def tag="main-nav">
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item with="&Consultation">
-      <ht key="consultations.mainnav.item">
+      <ht key="consultations.nav_item">
         Consultations
       </ht>
     </nav-item>
     <nav-item with="&Document">
-      <ht key="documents.mainnav">
+      <ht key="documents.nav_item">
         Documents
       </ht>
     </nav-item>
     <nav-item with="&Institution">
-      <ht key="institutions.mainnav">
+      <ht key="institutions.nav_item">
         Institutions
       </ht>
     </nav-item>
