@@ -15,7 +15,7 @@
 <def tag="form" for="Contact">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="title, email" param/>
+    <field-list fields="title, email, details" param/>
     <div param="actions">
       <submit label="#{ht 'contacts.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>

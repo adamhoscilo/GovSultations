@@ -5,6 +5,7 @@ class Contact < ActiveRecord::Base
   fields do
     title :string, :required
     email :email_address, :required
+    details :textile
     timestamps
   end
   
