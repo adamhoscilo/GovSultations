@@ -1,0 +1,197 @@
+####
+#### Hobo Translation
+####
+pl:
+  hobo:
+    # hobos default pages translations
+    page:
+      index:
+        title: "{{model}} indeks"
+        heading: "{{model}} indeks"
+
+      new:
+        title: "Dodaj {{model}}"
+        heading: "Dodaj {{model}}"
+
+      show:
+        title: "{{model}}"
+        heading: "{{model}}"
+        back_link: "Wróć"
+        edit_link: "Edytuj {{model}}"
+        new_link: "Dodaj {{model}}"
+        add_form_heading: "Dodaj {{model}}"
+
+      edit:
+        title: "Edycja {{model}}"
+        heading: "Edycja {{model}}"
+
+      index_for_owner:
+        title: "{{model}} powiązane z"
+        heading:
+          your: "Your {{model}}s"
+          other: "{{model}}s"
+        subheading: "For:"
+
+      new_for_owner:
+        title: "New {{model}} for"
+        heading: "New {{model}}"
+        subheading: "For:"
+          
+      login:
+        title: "Login"
+        heading: "Login"
+        email: "E-mail"
+        password: "Hasło"
+        remember_me: "Nie wylogowuj"
+        login: "Zaloguj się"
+        signup: "Zarejestruj się"
+        forgot_password: "Nie pamiętasz hasła?"
+
+      signup:
+        title: "Rejestracja konta"
+        heading: "Zakładania nowego konta"
+  
+      forgot_password:
+        title: "Nie pamiętasz hasła?"
+        heading: "Nie pamiętasz hasła?"
+        text: "Enter the e-mail address you used when you signed up for this site. 
+               We will then send you an e-mail that you can use to generate a new password."
+        email: "E-mail"
+        send: "Send"
+
+      forgot_password_sent:
+        title: "Forgotten password - E-mail sent"
+        heading: "Forgotten password - E-mail sent"
+        text: "En e-mail with instructions on how you generate a new password has been sent to {{email}}. If you don't receive this e-mail please check your spamfilter."
+
+      account_disabled:
+        title: "Account not found"
+        heading: "Account not found"
+        text: "Could not find an account that matches the e-mail given. Please check that the e-mail address was correct."
+
+    # hobos default action translation
+    action:
+      new: "Dodawanie"
+      create: "Create"
+      previous: "Poprzednia"
+      next: "Następna"
+      add: "Dodaj"
+      more: "Więcej"
+      delete: "Usuń {{model}}"
+      save: "Zapisz"
+      cancel: "Anuluj"
+      edit: "Edytuj {{model}}"
+      back: "Wróć do"
+      send: "Wyślij"
+      remove: "Usuń"
+      signup: "Zarejestruj się"
+      login: "Zaloguj się"
+      logout: "Wyloguj się"
+      logged_in_as: "Zalogowano jako {{name}}"
+      account: "Konto"
+          
+    # hobos default message translation  
+    messages:
+      create:
+        success: "{{model}} - zapisano"
+        error: "Nie udało się stworzyć {{model}}.\n{{errors}}"
+      creator:
+        error: "Couldn't do creator {{name}}.\n{{errors}}"
+      transition:
+        error: "Couldn't do transition {{name}}.\n{{errors}}"
+      update:
+        no_attribute_error: "No update specified in params"
+        success: "Changes to the {{model}} were saved"
+        error: "There was a problem with that change.\n{{errors}}"
+      destroy:
+        success: "The {{model}} was deleted"
+      signup: 
+        success: "Thanks for signing up!"
+        must_activate: "You must activate your account before you can log in. Please check your email."
+      login: 
+        success: "You have logged in."
+        error: "You did not provide a valid userid ({{login}}) and password!"
+      logout: "You have logged out."
+      reset_password: "Your password has been reset."
+      permission_denied: "Permission Denied"
+      not_found: "The page you requested cannot be found."
+      unauthenticated: "Couldn't authenticate you"
+      current_password_is_not_correct: "is not correct"
+      you_are_site_admin: "You are now the site administrator"
+      you_signed_up: "You have signed up"
+      no: "No {{model}} available."
+      confirm: "Are you sure?"
+        
+    # hobos default collection translation
+    collection:
+      count:
+        zero: "No {{model}}s"
+        one: "There is only one {{model}} at the moment"
+        other: "There are already {{count}} {{model}}s"
+      heading:
+        your: "Your {{model}}s"
+        other: "{{model}}s"
+      add_form_heading: "Add {{a_or_an}} {{model}}"
+      empty_message: "Nie ma nic do pokazania"
+            
+    # hobos form translation
+    form:
+      new:
+        heading: "New {{model}}"
+      error:
+        heading: "The following error occured:"
+
+    # hobo support
+    support:
+      or: "or"
+      a: "a"
+      an: "an"
+    
+    table_plus:
+      search: "Search"
+      empty: "No {{model}} to display"
+      
+    live_search:
+      label: "Search" 
+      results_label: "Search Results"
+      close_button: "close"
+      more: "More"
+      no_results: "Your search returned no matches."
+
+    dev_user_changer:
+      guest: "Niezalogowany"
+
+  
+  date:
+    formats:
+      # Use the strftime parameters for formats.
+      # When no format has been given, it uses default.
+      # You can provide other formats here if you like!
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+
+    day_names: [Poniedziałek, Wtorek, Środa, Czwartek, Piątek, Sobota, Niedziela]
+    abbr_day_names: [Pon, Wto, Śro, Czw, Pią, Sob, Nie]
+
+    # Don't forget the nil at the beginning; there's no such thing as a 0th month
+    month_names: [~, Styczeń, Luty, Marzec, Kwiecień, Maj, Czerwiec, Lipiec, Sierpień, Wrzesień, Październik, Listopad, Grudzień]
+    abbr_month_names: [~, Sty, Lut, Mar, Kwi, Maj, Cze, Lip, Sie, Wrz, Paź, Lis, Gru]
+    # Used in date_select and datime_select.
+    order: [ :year, :month, :day ]
+
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+    am: "am"
+    pm: "pm"
+
+# Used in array.to_sentence.
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " i "
+      last_word_connector: ", i "
+      

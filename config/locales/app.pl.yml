@@ -1,0 +1,21 @@
+pl:
+  consultations:
+    title: "Tytuł"
+    start_date: "Początek"
+    end_date: "Koniec"
+    objective: "Temat"
+    result_description: "Wynik"
+    contact: "Kontakt"
+    institution: "Instytucja"
+    policy_fields: "Zagadnienia"
+    target_groups: "Grupy, których dotyczą"
+    nav_item: "Konsultacje"
+    index:
+      title: "Konsultacje"
+      
+    
+  documents:
+    nav_item: "Dokumenty"
+    
+  institutions:
+    nav_item: "Instytucje"
