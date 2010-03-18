@@ -5,11 +5,11 @@
 <def tag="main-nav">
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
-    <nav-item with="&Consultation"><ht key="consultations.nav_item">Consultations</ht></nav-item>
+    <nav-item with="&Consultation"><ht key="consultations.nav_item">Konsultacje</ht></nav-item>
     <nav-item with="&Contact"><ht key="contacts.nav_item">Contacts</ht></nav-item>
     <nav-item with="&Document"><ht key="documents.nav_item">Documents</ht></nav-item>
     <nav-item with="&Institution"><ht key="institutions.nav_item">Institutions</ht></nav-item>
-    <nav-item with="&PolicyField"><ht key="policy_fields.nav_item">Policy Fields</ht></nav-item>
+    <nav-item with="&PolicyField"><ht key="policy_fields.nav_item">Zagadnienia</ht></nav-item>
   </navigation>
 </def>
 
@@ -19,14 +19,14 @@
 <!-- ====== Consultation Pages ====== -->
 
 <def tag="index-page" for="Consultation">
-  <page merge title="#{ht 'consultations.index.title', :default=>['Consultations'] }">
+  <page merge title="#{ht 'consultations.index.title', :default=>['Konsultacje'] }">
     <body: class="index-page consultation" param/>
 
     <content: param>
       <header param="content-header">
         <h2 param="heading">
           <ht key="consultations.index.heading">
-            Consultations
+            Konsultacje
           </ht>
         </h2>
 
@@ -39,7 +39,7 @@
 
       <section param="content-body">
         <a action="new" to="&model" param="new-link">
-          <ht key="consultations.actions.new">New Consultation</ht>
+          <ht key="consultations.actions.new">New Konsultacje</ht>
         </a>
 
         <page-nav param="top-page-nav"/>
@@ -56,21 +56,21 @@
 
 
 <def tag="new-page" for="Consultation">
-  <page merge title="#{ht 'consultations.new.title', :default=>[' New Consultation'] }">
+  <page merge title="#{ht 'consultations.new.title', :default=>[' New Konsultacje'] }">
     <body: class="new-page consultation" param/>
 
     <content: param>
       <section param="content-header">
         <h2 param="heading">
           <ht key="consultations.new.heading">
-            New Consultation
+            New Konsultacje
           </ht>
         </h2>
       </section>
 
       <section param="content-body">
         <form param>
-          <submit: label="#{ht 'consultations.actions.create', :default=>['Create Consultation']}"/>
+          <submit: label="#{ht 'consultations.actions.create', :default=>['Create Konsultacje']}"/>
         </form>
       </section>
     </content:>
@@ -79,7 +79,7 @@
 
 
 <def tag="show-page" for="Consultation">
-  <page merge title="#{ht 'consultations.show.title', :default=>['Consultation'] }">
+  <page merge title="#{ht 'consultations.show.title', :default=>['Konsultacje'] }">
 
     <body: class="show-page consultation" param/>
 
@@ -95,7 +95,7 @@
 
             <a action="edit" if="&can_edit?" param="edit-link">
               <ht key="consultations.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
-                Edit Consultation
+                Edit Konsultacje
               </ht>
             </a>
           </header>
@@ -110,7 +110,7 @@
 
 
 <def tag="edit-page" for="Consultation">
-  <page merge title="#{ht 'consultations.edit.title', :default=>['Edit Consultation'] }">
+  <page merge title="#{ht 'consultations.edit.title', :default=>['Edit Konsultacje'] }">
 
     <body: class="edit-page consultation" param/>
 
@@ -121,7 +121,7 @@
             Edit <type-name/>
           </ht>
         </h2>
-        <delete-button label="#{ht 'consultations.actions.delete', :default=>['Remove This Consultation']}" param/>
+        <delete-button label="#{ht 'consultations.actions.delete', :default=>['Remove This Konsultacje']}" param/>
       </section>
 
       <section param="content-body">
@@ -648,14 +648,14 @@
 <!-- ====== PolicyField Pages ====== -->
 
 <def tag="index-page" for="PolicyField">
-  <page merge title="#{ht 'policy_fields.index.title', :default=>['Policy Fields'] }">
+  <page merge title="#{ht 'policy_fields.index.title', :default=>['Zagadnienia'] }">
     <body: class="index-page policy-field" param/>
 
     <content: param>
       <header param="content-header">
         <h2 param="heading">
           <ht key="policy_fields.index.heading">
-            Policy Fields
+            Zagadnienia
           </ht>
         </h2>
 
@@ -668,7 +668,7 @@
 
       <section param="content-body">
         <a action="new" to="&model" param="new-link">
-          <ht key="policy_fields.actions.new">New Policy Field</ht>
+          <ht key="policy_fields.actions.new">New Zagadnienie</ht>
         </a>
 
         <page-nav param="top-page-nav"/>
@@ -685,21 +685,21 @@
 
 
 <def tag="new-page" for="PolicyField">
-  <page merge title="#{ht 'policy_fields.new.title', :default=>[' New Policy Field'] }">
+  <page merge title="#{ht 'policy_fields.new.title', :default=>[' New Zagadnienie'] }">
     <body: class="new-page policy-field" param/>
 
     <content: param>
       <section param="content-header">
         <h2 param="heading">
           <ht key="policy_fields.new.heading">
-            New Policy Field
+            New Zagadnienie
           </ht>
         </h2>
       </section>
 
       <section param="content-body">
         <form param>
-          <submit: label="#{ht 'policy_fields.actions.create', :default=>['Create Policy Field']}"/>
+          <submit: label="#{ht 'policy_fields.actions.create', :default=>['Create Zagadnienie']}"/>
         </form>
       </section>
     </content:>
@@ -708,7 +708,7 @@
 
 
 <def tag="show-page" for="PolicyField">
-  <page merge title="#{ht 'policy_fields.show.title', :default=>['Policy Field'] }">
+  <page merge title="#{ht 'policy_fields.show.title', :default=>['Zagadnienie'] }">
 
     <body: class="show-page policy-field" param/>
 
@@ -724,7 +724,7 @@
 
             <a action="edit" if="&can_edit?" param="edit-link">
               <ht key="policy_fields.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
-                Edit Policy Field
+                Edit Zagadnienie
               </ht>
             </a>
           </header>
@@ -738,7 +738,7 @@
 
 
 <def tag="edit-page" for="PolicyField">
-  <page merge title="#{ht 'policy_fields.edit.title', :default=>['Edit Policy Field'] }">
+  <page merge title="#{ht 'policy_fields.edit.title', :default=>['Edit Zagadnienie'] }">
 
     <body: class="edit-page policy-field" param/>
 
@@ -749,7 +749,7 @@
             Edit <type-name/>
           </ht>
         </h2>
-        <delete-button label="#{ht 'policy_fields.actions.delete', :default=>['Remove This Policy Field']}" param/>
+        <delete-button label="#{ht 'policy_fields.actions.delete', :default=>['Remove This Zagadnienie']}" param/>
       </section>
 
       <section param="content-body">
@@ -767,14 +767,14 @@
 <!-- ====== TargetGroup Pages ====== -->
 
 <def tag="index-page" for="TargetGroup">
-  <page merge title="#{ht 'target_groups.index.title', :default=>['Target Groups'] }">
+  <page merge title="#{ht 'target_groups.index.title', :default=>['Grupy'] }">
     <body: class="index-page target-group" param/>
 
     <content: param>
       <header param="content-header">
         <h2 param="heading">
           <ht key="target_groups.index.heading">
-            Target Groups
+            Grupy
           </ht>
         </h2>
 
@@ -787,7 +787,7 @@
 
       <section param="content-body">
         <a action="new" to="&model" param="new-link">
-          <ht key="target_groups.actions.new">New Target Group</ht>
+          <ht key="target_groups.actions.new">New Grupa</ht>
         </a>
 
         <page-nav param="top-page-nav"/>
@@ -804,21 +804,21 @@
 
 
 <def tag="new-page" for="TargetGroup">
-  <page merge title="#{ht 'target_groups.new.title', :default=>[' New Target Group'] }">
+  <page merge title="#{ht 'target_groups.new.title', :default=>[' New Grupa'] }">
     <body: class="new-page target-group" param/>
 
     <content: param>
       <section param="content-header">
         <h2 param="heading">
           <ht key="target_groups.new.heading">
-            New Target Group
+            New Grupa
           </ht>
         </h2>
       </section>
 
       <section param="content-body">
         <form param>
-          <submit: label="#{ht 'target_groups.actions.create', :default=>['Create Target Group']}"/>
+          <submit: label="#{ht 'target_groups.actions.create', :default=>['Create Grupa']}"/>
         </form>
       </section>
     </content:>
@@ -827,7 +827,7 @@
 
 
 <def tag="show-page" for="TargetGroup">
-  <page merge title="#{ht 'target_groups.show.title', :default=>['Target Group'] }">
+  <page merge title="#{ht 'target_groups.show.title', :default=>['Grupa'] }">
 
     <body: class="show-page target-group" param/>
 
@@ -843,7 +843,7 @@
 
             <a action="edit" if="&can_edit?" param="edit-link">
               <ht key="target_groups.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
-                Edit Target Group
+                Edit Grupa
               </ht>
             </a>
           </header>
@@ -857,7 +857,7 @@
 
 
 <def tag="edit-page" for="TargetGroup">
-  <page merge title="#{ht 'target_groups.edit.title', :default=>['Edit Target Group'] }">
+  <page merge title="#{ht 'target_groups.edit.title', :default=>['Edit Grupa'] }">
 
     <body: class="edit-page target-group" param/>
 
@@ -868,7 +868,7 @@
             Edit <type-name/>
           </ht>
         </h2>
-        <delete-button label="#{ht 'target_groups.actions.delete', :default=>['Remove This Target Group']}" param/>
+        <delete-button label="#{ht 'target_groups.actions.delete', :default=>['Remove This Grupa']}" param/>
       </section>
 
       <section param="content-body">

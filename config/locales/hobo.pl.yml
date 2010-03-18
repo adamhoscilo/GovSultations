@@ -3,6 +3,27 @@
 ####
 pl:
   hobo:
+    title: "Tytuł"
+    actions:
+      new: "{{model}} - dodaj nowy"
+      create: "Create"
+      previous: "Poprzednia"
+      next: "Następna"
+      add: "Dodaj"
+      more: "Zobacz więcej"
+      delete: "Usuń {{model}}"
+      save: "Zapisz"
+      cancel: "Anuluj"
+      edit: "Edytuj {{model}}"
+      back: "Wróć do"
+      send: "Wyślij"
+      remove: "Usuń"
+      signup: "Zarejestruj się"
+      login: "Zaloguj się"
+      logout: "Wyloguj się"
+      logged_in_as: "Zalogowano jako {{name}}"
+      account: "Konto"
+    
     # hobos default pages translations
     page:
       index:
@@ -70,25 +91,6 @@ pl:
         text: "Could not find an account that matches the e-mail given. Please check that the e-mail address was correct."
 
     # hobos default action translation
-    action:
-      new: "Dodawanie"
-      create: "Create"
-      previous: "Poprzednia"
-      next: "Następna"
-      add: "Dodaj"
-      more: "Więcej"
-      delete: "Usuń {{model}}"
-      save: "Zapisz"
-      cancel: "Anuluj"
-      edit: "Edytuj {{model}}"
-      back: "Wróć do"
-      send: "Wyślij"
-      remove: "Usuń"
-      signup: "Zarejestruj się"
-      login: "Zaloguj się"
-      logout: "Wyloguj się"
-      logged_in_as: "Zalogowano jako {{name}}"
-      account: "Konto"
           
     # hobos default message translation  
     messages:
@@ -119,7 +121,7 @@ pl:
       current_password_is_not_correct: "is not correct"
       you_are_site_admin: "You are now the site administrator"
       you_signed_up: "You have signed up"
-      no: "No {{model}} available."
+      no: "{{model}} - nic nie jest wybrane."
       confirm: "Are you sure?"
         
     # hobos default collection translation
@@ -143,9 +145,9 @@ pl:
 
     # hobo support
     support:
-      or: "or"
-      a: "a"
-      an: "an"
+      or: "lub"
+      a: " "
+      an: " "
     
     table_plus:
       search: "Search"

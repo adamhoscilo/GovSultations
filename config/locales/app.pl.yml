@@ -1,5 +1,9 @@
 pl:
   consultations:
+    model: "Konsultacje"
+    Consultation: "Konsultacje"
+    model_name: "Konsultacje"
+    model_name_plural: "Konsultacje"
     title: "Tytuł"
     start_date: "Data rozpoczęcia"
     end_date: "Data zakończenia"
@@ -28,10 +32,25 @@ pl:
     
     nav_item: "Dokumenty"
     
+  
   institutions:
     index:
       title: "Instytucje"
       
     nav_item: "Instytucje"
     
-  Title: "tytuł"
+  
+  target_groups:
+    model_name: "Grupa"
+    model_name_plural: "Grupy"
+    
+    
+  policy_fields:
+    model_name: "Zagadnienie"
+    model_name_plural: "Zagadnienia"
+    
+  
+  contact:
+    message:
+      no: "(Kontakt nie został wybrany)"
+    
