@@ -125,7 +125,7 @@ pl:
     # hobos default collection translation
     collection:
       count:
-        zero: "No {{model}}s"
+        zero: "Brak {{model}}"
         one: "There is only one {{model}} at the moment"
         other: "There are already {{count}} {{model}}s"
       heading:

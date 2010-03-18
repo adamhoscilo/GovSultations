@@ -9,18 +9,29 @@ pl:
     institution: "Instytucja"
     policy_fields: "Zagadnienia"
     target_groups: "Grupy, których dotyczą"
+    
     nav_item: "Konsultacje"
     index:
       title: "Konsultacje"
+      heading: "Trwające konsultacje"
+    new:
+      title: "Dodaj konsultację"
+      heading: "Formularz dodawania konsultacji"
     actions:
       save: "Zapisz zmiany"
       create: "Zapisz konsultację"
       
     
   documents:
+    index:
+      title: "Dokumenty"
+    
     nav_item: "Dokumenty"
     
   institutions:
+    index:
+      title: "Instytucje"
+      
     nav_item: "Instytucje"
     
   Title: "tytuł"
