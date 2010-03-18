@@ -1,8 +1,8 @@
 pl:
   consultations:
     title: "Tytuł"
-    start_date: "Początek"
-    end_date: "Koniec"
+    start_date: "Data rozpoczęcia"
+    end_date: "Data zakończenia"
     objective: "Temat"
     result_description: "Wynik"
     contact: "Kontakt"

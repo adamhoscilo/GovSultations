@@ -19,9 +19,15 @@
         <page-nav param="top-page-nav"/>
 
         <table-plus fields="this, end_date, policy_fields" param>
-          <Consultation-heading:>Title</Consultation-heading:>
-          <policy_fields-heading:>Policy fields</policy_fields-heading:>
-          <end_date-heading:>End date</end_date-heading:>
+          <Consultation-heading:>
+            <ht key="consultations.title">Title</ht>
+          </Consultation-heading:>
+          <policy_fields-heading:>
+            <ht key="consultations.policy_fields">Policy fields</ht>
+          </policy_fields-heading:>
+          <end_date-heading:>
+            <ht key="consultations.end_date">End date</ht>
+          </end_date-heading:>
           <end_date-view:><%= this.to_date %></end_date-view:>
         </table-plus>
       
