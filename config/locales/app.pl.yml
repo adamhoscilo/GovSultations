@@ -12,6 +12,9 @@ pl:
     nav_item: "Konsultacje"
     index:
       title: "Konsultacje"
+    actions:
+      save: "Zapisz zmiany"
+      create: "Zapisz konsultację"
       
     
   documents:
@@ -19,3 +22,5 @@ pl:
     
   institutions:
     nav_item: "Instytucje"
+    
+  Title: "tytuł"
